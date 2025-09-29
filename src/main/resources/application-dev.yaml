@@ -1,0 +1,30 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    #    zeroDateTimeBehavior 地址可以是空的
+    url: jdbc:mysql://localhost:3306/chatweb?serverTimezone=UTC&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: "0000"
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    database: 0
+
+#上传图片修改限制
+  servlet:
+    multipart:
+      max-file-size: 10MB       # 单个文件最大尺寸
+      max-request-size: 20MB   # 整个请求最大尺寸
+reply:
+  min-match-score: 0.3 # 最低匹配分数阈值
+deepseek:
+  api-key: sk-218f0504e6a948c1b1c12c4033494156
+  base-url: https://api.deepseek.com
+  model: deepseek-chat
+
+file:
+  upload-dir: ./uploads
+
